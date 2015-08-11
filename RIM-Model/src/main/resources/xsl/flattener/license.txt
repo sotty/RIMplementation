@@ -1,0 +1,73 @@
+﻿*******************************************************************************
+*
+* Licensed Materials - Property of Paul Kiel, xmlHelpline.com Consulting
+*
+*
+* (C) COPYRIGHT PAUL KIEL 2014
+* All Rights Reserved.
+*
+*
+*******************************************************************************
+These stylesheets were created by Paul Kiel of xmlHelpline.com Consulting,
+"Your helpline for xml solutions".
+
+If you have ideas / questions / comments, etc about this feel free to contact me at paul@xmlhelpline.com.
+
+*******************************************************************************
+
+			LEGAL TEXT
+
+Copyright Protection:
+
+The Xml Schema Lightener, Xml Schema Flattener, WSDL Flattener, its code and Xslt transformations (collectively and individually referred to as "Schema Lightener") are protected by U.S. and international copyright law against unauthorized redistribution and duplication. The Schema Lightener may not, under any circumstances, be reverse-engineered, copied, or re-distributed by any organization that produces or markets any software or other products for resale, without the express written consent of Paul Kiel of xmlHelpline.com Consulting, Raleigh, North Carolina, USA.
+
+Documents and resource files are provided under the following license.  By obtaining, using, and/or copying this file, or any related file obtained from this site, you agree that you have read, understood, and will comply with the following terms and conditions:
+
+Permissions to reproduce, distribute, perform, display and create derivative works of the contents of this file, in any medium for any purpose and without fee or royalty are hereby granted, provided that you include the following on or in the documentation that accompanies ALL copies of the file that you use:
+
+1. A reference to the original Schema Lightener resource
+2. A notice of the form "Copyright (c) Paul Kiel, xmlHelpline.com Consulting. All Rights Reserved
+
+When space permits, inclusion of the full text of this NOTICE should be provided.  Attribution is requested to be provided in any software, documentation, or other items or products that you create related to the implementation of the contents of this file.
+
+THIS RESOURCE IS PROVIDED AS IS, AND THE COPYRIGHT HOLDER MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR TITLE; THAT THE CONTENTS OF THE DOCUMENT ARE SUITABLE FOR ANY PURPOSE; NOR THAT THE IMPLEMENTATION OF SUCH CONTENTS WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.
+
+THE COPYRIGHT HOLDER WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE DOCUMENT OR THE PERFORMANCE OR IMPLEMENTATION OF THE CONTENTS THEREOF.
+
+The name and trademarks of copyright holder may NOT be used in advertising or publicity pertaining to this file or its contents without specific, written prior permission.
+
+Title to copyright in this document will at all times remain with copyright holders.
+
+Please Note: This file is a work in process, and may be modified or enhanced, at the discretion of the Open Applications Group without notice, at any time.
+
+
+Limitation of Liability:
+
+LIMITATION OF LIABILITY: PAUL KIEL OF XMLHELPLINE.COM CONSULTING IS NOT LIABLE
+FOR ANY CLAIMS OR DAMAGES WHATSOEVER, INCLUDING PROPERTY DAMAGE,
+PERSONAL INJURY, INTELLECTUAL PROPERTY INFRINGEMENT, LOSS OF PROFITS,
+OR INTERRUPTION OF BUSINESS, OR FOR ANY SPECIAL, CONSEQUENTIAL OR INCIDENTAL
+DAMAGES, HOWEVER CAUSED, WHETHER ARISING OUT OF BREACH OF WARRANTY,
+CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR OTHERWISE.
+
+THIS WORK, INCLUDING SPECIFICATIONS, DOCUMENTS, SOFTWARE, OR OTHER
+RELATED ITEMS, IS PROVIDED "AS IS," AND THE COPYRIGHT HOLDER MAKES NO
+REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT
+NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY
+PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE OR DOCUMENTATION
+WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS
+OR OTHER RIGHTS.
+
+THE COPYRIGHT HOLDER WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT,
+SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE
+SOFTWARE OR DOCUMENTATION.
+
+TITLE TO COPYRIGHT IN THIS WORK AND ANY ASSOCIATED DOCUMENTATION
+WILL AT ALL TIMES REMAIN WITH THE COPYRIGHT HOLDER.
+
+
+Copyright © 2014, Paul Kiel
+xmlHelpline.com Consulting
+5916 Valley Estates Drive
+Raleigh, North Carolina, USA 27612
+

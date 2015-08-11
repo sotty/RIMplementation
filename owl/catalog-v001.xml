@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="urn:hl7-org:cdsdt:r2/1.0" uri="datatype.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1434985421009" name="http://hl7.org/owl/datatypes/uv#" uri="O-RIM/datatypes-uv-2.0.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1434985421009" name="http://org.hl7.v3/rim" uri="rim_all.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1434985421009" name="http://org.hl7.v3/rim/upper" uri="rim-upper.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1434985421009" name="urn:hl7-org:cdsdt:r2" uri="datatype.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1434985421009" name="urn:hl7-org:upp-voc" uri="rim-upper-voc.owl"/>
+    </group>
+</catalog>

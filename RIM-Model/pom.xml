@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>RIM-Impl</artifactId>
+		<groupId>edu.mayo.clinicalmodels</groupId>
+		<version>2.0-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>RIM-Model</artifactId>
+
+	<dependencies>
+		<dependency>
+			<groupId>net.sf.saxon</groupId>
+			<artifactId>saxon</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>edu.mayo.cts2</groupId>
+			<artifactId>terms-metamodel</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sourceforge.owlapi</groupId>
+			<artifactId>owlapi-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.owlapi</groupId>
+			<artifactId>owlapi-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.owlapi</groupId>
+			<artifactId>owlapi-apibinding</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-cli</groupId>
+			<artifactId>commons-cli</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-xjc</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+
+		<resources>
+			<resource>
+				<directory>${pom.basedir}/target/generated-resources</directory>
+			</resource>
+			<resource>
+				<directory>${pom.basedir}/src/main/resources</directory>
+			</resource>
+		</resources>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<id>include-generated-sources</id>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${pom.basedir}/target/generated-resources</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>xml-maven-plugin</artifactId>
+				<version>1.0</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>transform</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<transformationSets>
+						<transformationSet>
+							<dir>${basedir}/src/main/resources/mif</dir>
+							<stylesheet>${basedir}/src/main/resources/xsl/type/rim-coremif2xsd.xsl</stylesheet>
+							<outputDir>${project.build.directory}/temp/core</outputDir>
+							<excludes>
+								<exclude>rim.mif2</exclude>
+							</excludes>
+							<fileMappers>
+								<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
+									<targetExtension>.xsd</targetExtension>
+								</fileMapper>
+							</fileMappers>
+						</transformationSet>
+
+						<transformationSet>
+							<dir>${project.build.directory}/temp/core</dir>
+							<stylesheet>${basedir}/src/main/resources/xsl/type/xsd2xjb.xsl</stylesheet>
+							<outputDir>${project.build.directory}/temp/xjb/type</outputDir>
+							<fileMappers>
+								<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
+									<targetExtension>.xjb</targetExtension>
+								</fileMapper>
+							</fileMappers>
+						</transformationSet>
+
+						<transformationSet>
+							<dir>${project.build.directory}/temp/core</dir>
+							<stylesheet>${basedir}/src/main/resources/xsl/flattener/SchemaFlattenerF.xslt</stylesheet>
+							<outputDir>${project.build.directory}/temp/xsd/flat</outputDir>
+							<fileMappers>
+								<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
+									<targetExtension>.xsd</targetExtension>
+								</fileMapper>
+							</fileMappers>
+							<includes>
+								<include>rim.xsd</include>
+							</includes>
+							<parameters>
+								<parameter>
+									<name>sourcePathAndFileName</name>
+									<value>${project.build.directory}/temp/core/rim.xsd</value>
+								</parameter>
+								<parameter>
+									<name>resultBasePath</name>
+									<value>${project.build.directory}/temp/xsd/flat/</value>
+								</parameter>
+							</parameters>
+						</transformationSet>
+
+					</transformationSets>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>net.sf.saxon</groupId>
+						<artifactId>saxon</artifactId>
+						<version>8.7</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.3.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<phase>process-classes</phase>
+						<configuration>
+							<mainClass>org.hl7.v3.rim.ontology.RIMMifParser</mainClass>
+							<arguments>
+								<argument>${basedir}/target/generated-resources</argument>
+								<argument>${basedir}/target/generated-resources/csv</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+
+					<execution>
+						<id>pre-copy</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/temp/core</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/src/main/resources/xsd</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>copy-type-resources</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/generated-resources/xsd/typeBind</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/src/main/resources/xjb/type</directory>
+									<filtering>true</filtering>
+								</resource>
+								<resource>
+									<directory>${project.build.directory}/temp/xsd/flat/urn_hl7-org_v3</directory>
+									<filtering>true</filtering>
+								</resource>
+								<resource>
+									<directory>${project.build.directory}/temp/xjb/type</directory>
+									<includes>
+										<include>rim.xjb</include>
+									</includes>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>copy-dt-resources</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/generated-resources/xsd/datatypes</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/src/main/resources/xsd</directory>
+									<filtering>true</filtering>
+								</resource>
+								<resource>
+									<directory>${basedir}/src/main/resources/xjb/datatypes</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>copy-owl-resources</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.outputDirectory}/owl</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.build.directory}/generated-resources/owl</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>copy-csv-resources</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.outputDirectory}/csv</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.build.directory}/generated-resources/csv</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+
+				</executions>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.10</version>
+				<executions>
+					<execution>
+						<id>unpack-owl</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>edu.mayo.cts2</groupId>
+									<artifactId>terms-metamodel</artifactId>
+									<version>1.0-SNAPSHOT</version>
+									<type>jar</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${project.build.outputDirectory}/owl</outputDirectory>
+									<includes>**/*.owl,**/*.rdf</includes>
+								</artifactItem>
+							</artifactItems>
+							<includes>**/*.owl,**/*.rdf</includes>
+							<outputDirectory>${project.build.directory}/owl</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+		</plugins>
+
+	</build>
+
+
+</project>

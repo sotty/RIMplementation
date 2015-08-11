@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ontology  ontologyIRI="http://hl7.org/owl/metadata#" xmlns="http://www.w3.org/2002/07/owl#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2002/07/owl# C:\Users\office\Documents\Projects\NCI\owl2-xml.xsd">
+  <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+  <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+  <Prefix name="xs" IRI="http://www.w3.org/2001/XMLSchema#"/>
+  <Prefix name="hl7" IRI="http://hl7.org/owl/metadata#"/>
+  <Prefix name="dt" IRI="http://hl7.org/owl/datatypes/uv#"/>
+  <Annotation>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <Literal datatypeIRI="xs:string">This ontology defines the metadata constructs used by HL7 in its OWL representations.  It is defined as a distinct ontology because it will apply independent of HL7 artifacts and will change rarely, if ever.</Literal>
+  </Annotation>
+  <!--
+    - Metadata classes & properties
+    -->
+  <Declaration>
+    <Class abbreviatedIRI="hl7:Thing"/>
+  </Declaration>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:Thing"/>
+    <Class abbreviatedIRI="owl:Thing"/>
+  </SubClassOf>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:Thing</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">A grouper for all classes that are defined by HL7</Literal>
+  </AnnotationAssertion>
+  <!-- objectProperty -->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:objectProperty"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:objectProperty</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Grouper for all HL7-defined object properties.</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:objectProperty"/>
+    <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty abbreviatedIRI="hl7:objectProperty"/>
+    <Class abbreviatedIRI="hl7:Thing"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty abbreviatedIRI="hl7:objectProperty"/>
+    <Class abbreviatedIRI="hl7:Thing"/>
+  </ObjectPropertyRange>
+  <!-- dataProperty -->
+  <Declaration>
+    <DataProperty abbreviatedIRI="hl7:dataProperty"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:dataProperty</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Grouper for all HL7-defined data properties.</Literal>
+  </AnnotationAssertion>
+  <SubDataPropertyOf>
+    <DataProperty abbreviatedIRI="hl7:dataProperty"/>
+    <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+  </SubDataPropertyOf>
+  <DataPropertyDomain>
+    <DataProperty abbreviatedIRI="hl7:dataProperty"/>
+    <Class abbreviatedIRI="hl7:Thing"/>
+  </DataPropertyDomain>
+  <!-- Categories of HL7 artifacts -->
+  <DisjointClasses>
+    <Class abbreviatedIRI="hl7:StaticModelClass"/>
+    <Class abbreviatedIRI="hl7:Datatype"/>
+    <Class abbreviatedIRI="hl7:CodeSystem"/>
+    <Class abbreviatedIRI="hl7:CodeSystemVersion"/>
+  </DisjointClasses>
+  <DisjointClasses>
+    <Class abbreviatedIRI="hl7:StaticModelClass"/>
+    <Class abbreviatedIRI="hl7:CodeSystem"/>
+    <Class abbreviatedIRI="hl7:CodeSystemVersion"/>
+    <Class abbreviatedIRI="hl7:ValueSet"/>
+  </DisjointClasses>
+  <!-- Vocabulary artifacts -->
+  <Declaration>
+    <Class abbreviatedIRI="hl7:VocabularyArtifact"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:VocabularyArtifact</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Grouper for all HL7 vocabulary-related artifacts</Literal>
+  </AnnotationAssertion>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:VocabularyArtifact"/>
+    <Class abbreviatedIRI="hl7:Thing"/>
+  </SubClassOf>
+  <DisjointClasses>
+    <Class abbreviatedIRI="hl7:VocabularyConcept"/>
+    <Class abbreviatedIRI="hl7:CodeSystem"/>
+    <Class abbreviatedIRI="hl7:CodeSystemVersion"/>
+    <Class abbreviatedIRI="hl7:ValueSet"/>
+  </DisjointClasses>
+  <!-- VocabularyArtifact.objectProperty -->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyArtifact.objectProperty"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:VocabularyArtifact.objectProperty</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Represents a relationship between two HL7 vocabulary artifacts</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyArtifact.objectProperty"/>
+    <ObjectProperty abbreviatedIRI="hl7:objectProperty"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyArtifact.objectProperty"/>
+    <Class abbreviatedIRI="hl7:VocabularyArtifact"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyArtifact.objectProperty"/>
+    <Class abbreviatedIRI="hl7:VocabularyArtifact"/>
+  </ObjectPropertyRange>
+  <!-- VocabularyArtifact.dataProperty -->
+  <Declaration>
+    <DataProperty abbreviatedIRI="hl7:VocabularyArtifact.dataProperty"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:VocabularyArtifact.dataProperty</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Represents a characteristic of an HL7 vocabulary artifact</Literal>
+  </AnnotationAssertion>
+  <SubDataPropertyOf>
+    <DataProperty abbreviatedIRI="hl7:VocabularyArtifact.dataProperty"/>
+    <DataProperty abbreviatedIRI="hl7:dataProperty"/>
+  </SubDataPropertyOf>
+  <DataPropertyDomain>
+    <DataProperty abbreviatedIRI="hl7:VocabularyArtifact.dataProperty"/>
+    <Class abbreviatedIRI="hl7:VocabularyArtifact"/>
+  </DataPropertyDomain>
+  <!--
+    - VocabularyConcept
+    -->
+  <Declaration>
+    <Class abbreviatedIRI="hl7:VocabularyConcept"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:VocabularyConcept</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Identifies a semantic idea representable in a code system.  (Could correspond to multiple codes - synonyms.)</Literal>
+  </AnnotationAssertion>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:VocabularyConcept"/>
+    <Class abbreviatedIRI="hl7:VocabularyArtifact"/>
+  </SubClassOf>
+  <!-- VocabularyConcept.conceptRelationship -->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyConcept.conceptRelationship"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:VocabularyConcept.conceptRelationship</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Identifies a relationship between two concepts.</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyConcept.conceptRelationship"/>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyArtifact.objectProperty"/>
+  </SubObjectPropertyOf>
+  <!-- VocabularyConcept.inferredConceptRelationship -->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyConcept.inferredConceptRelationship"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:VocabularyConcept.inferredConceptRelationship</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Identifies a relationship between two concepts that is inferred for the sake of decision-support logic.</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyConcept.inferredConceptRelationship"/>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyConcept.conceptRelationship"/>
+  </SubObjectPropertyOf>
+  <Declaration>
+    <DataProperty abbreviatedIRI="hl7:VocabularyConcept.property"/>        
+  </Declaration>
+  <SubDataPropertyOf>
+    <DataProperty abbreviatedIRI="hl7:VocabularyConcept.property"/>        
+    <DataProperty abbreviatedIRI="hl7:VocabularyArtifact.dataProperty"/>        
+  </SubDataPropertyOf>
+  <!-- VocabularyConcept.codingRef -->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyConcept.codingRef"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:VocabularyConcept.codingRef</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Identifies a code system representation of the concept</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyConcept.codingRef"/>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyArtifact.objectProperty"/>
+  </SubObjectPropertyOf>
+  <InverseFunctionalObjectProperty>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyConcept.codingRef"/>
+  </InverseFunctionalObjectProperty>
+  <ObjectPropertyDomain>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyConcept.codingRef"/>
+    <Class abbreviatedIRI="hl7:VocabularyConcept"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyConcept.codingRef"/>
+    <Class abbreviatedIRI="hl7:Coding"/>
+  </ObjectPropertyRange>
+  <!--
+    - Concept Domain
+    -->
+  <Declaration>
+    <Class abbreviatedIRI="hl7:ConceptDomain"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:ConceptDomain</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">An abstract label used to identify what types of concepts are permitted for a coded class attribute or datatype property</Literal>
+  </AnnotationAssertion>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:ConceptDomain"/>
+    <Class abbreviatedIRI="hl7:VocabularyConcept"/>
+  </SubClassOf>
+  <!--
+    - Code System
+    -->
+  <Declaration>
+    <Class abbreviatedIRI="hl7:CodeSystem"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:CodeSystem</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Collection of concepts and the codes that represent them as defined by some maintenance authority</Literal>
+  </AnnotationAssertion>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:CodeSystem"/>
+    <Class abbreviatedIRI="hl7:VocabularyArtifact"/>
+  </SubClassOf>
+  <HasKey>
+    <Class abbreviatedIRI="hl7:CodeSystem"/>
+    <DataProperty abbreviatedIRI="hl7:CodeSystem.id"/>
+  </HasKey>
+  <!-- CodeSystem.id -->
+  <Declaration>
+    <DataProperty abbreviatedIRI="hl7:CodeSystem.id"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:CodeSystem.id</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">The OID identifier for the code system</Literal>
+  </AnnotationAssertion>
+  <DataPropertyDomain>
+    <DataProperty abbreviatedIRI="hl7:CodeSystem.id"/>
+    <Class abbreviatedIRI="hl7:CodeSystem"/>
+  </DataPropertyDomain>
+  <SubDataPropertyOf>
+    <DataProperty abbreviatedIRI="hl7:CodeSystem.id"/>        
+    <DataProperty abbreviatedIRI="hl7:VocabularyArtifact.dataProperty"/>        
+  </SubDataPropertyOf>
+  <DataPropertyRange>
+    <DataProperty abbreviatedIRI="hl7:CodeSystem.id"/>
+    <Datatype abbreviatedIRI="xs:string"/>
+<!--    <Datatype abbreviatedIRI="dt:UID"/>-->
+  </DataPropertyRange>
+  <!-- CodeSystem.versionRef -->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:CodeSystem.versionRef"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:CodeSystem.versionRef</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">The versions that exist for the code system</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:CodeSystem.versionRef"/>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyArtifact.objectProperty"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty abbreviatedIRI="hl7:CodeSystem.versionRef"/>
+    <Class abbreviatedIRI="hl7:CodeSystem"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty abbreviatedIRI="hl7:CodeSystem.versionRef"/>
+    <Class abbreviatedIRI="hl7:CodeSystemVersion"/>
+  </ObjectPropertyRange>
+  <InverseFunctionalObjectProperty>
+    <ObjectProperty abbreviatedIRI="hl7:CodeSystem.versionRef"/>
+  </InverseFunctionalObjectProperty>
+  <!--
+    - CodeSystemVersion
+    -->
+  <Declaration>
+    <Class abbreviatedIRI="hl7:CodeSystemVersion"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:CodeSystemVersion</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">A code system as it was defined at a particular point in time</Literal>
+  </AnnotationAssertion>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:CodeSystemVersion"/>
+    <Class abbreviatedIRI="hl7:VocabularyArtifact"/>
+  </SubClassOf>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:CodeSystemVersion"/>
+    <DataMaxCardinality cardinality="1">
+      <DataProperty abbreviatedIRI="hl7:CodeSystemVersion.codeSystem"/>
+    </DataMaxCardinality>
+  </SubClassOf>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:CodeSystemVersion"/>
+    <DataMaxCardinality cardinality="1">
+      <DataProperty abbreviatedIRI="hl7:CodeSystemVersion.versionDate"/>
+    </DataMaxCardinality>
+  </SubClassOf>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:Coding"/>
+    <DataMaxCardinality cardinality="1">
+      <DataProperty abbreviatedIRI="hl7:Coding.code"/>
+    </DataMaxCardinality>
+  </SubClassOf>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:Coding"/>
+    <ObjectMinCardinality cardinality="1">
+      <ObjectProperty abbreviatedIRI="hl7:Coding.codeSystemVersionRef"/>
+    </ObjectMinCardinality>
+  </SubClassOf>
+  <HasKey>
+    <Class abbreviatedIRI="hl7:CodeSystemVersion"/>
+    <DataProperty abbreviatedIRI="hl7:CodeSystemVersion.codeSystem"/>
+    <DataProperty abbreviatedIRI="hl7:CodeSystemVersion.versionDate"/>
+  </HasKey>
+  <!-- CodeSystemVersion.codeSystem-->
+  <Declaration>
+    <DataProperty abbreviatedIRI="hl7:CodeSystemVersion.codeSystem"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:CodeSystemVersion.codeSystem</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">The identifier of the code system whose version is represented (part of key)</Literal>
+  </AnnotationAssertion>
+  <SubDataPropertyOf>
+    <DataProperty abbreviatedIRI="hl7:CodeSystemVersion.codeSystem"/>
+    <DataProperty abbreviatedIRI="hl7:VocabularyArtifact.dataProperty"/>        
+  </SubDataPropertyOf>
+  <DataPropertyDomain>
+    <DataProperty abbreviatedIRI="hl7:CodeSystemVersion.codeSystem"/>
+    <Class abbreviatedIRI="hl7:CodeSystemVersion"/>
+  </DataPropertyDomain>
+  <DataPropertyRange>
+    <DataProperty abbreviatedIRI="hl7:CodeSystemVersion.codeSystem"/>
+    <Datatype abbreviatedIRI="xs:string"/>
+<!--    <Datatype abbreviatedIRI="dt:UID"/>-->
+  </DataPropertyRange>
+  <!-- CodeSystemVersion.versionDate -->
+  <Declaration>
+    <DataProperty abbreviatedIRI="hl7:CodeSystemVersion.versionDate"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:CodeSystemVersion.versionDate</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">The date on which this version of the code system was created</Literal>
+  </AnnotationAssertion>
+  <DataPropertyDomain>
+    <DataProperty abbreviatedIRI="hl7:CodeSystemVersion.versionDate"/>
+    <Class abbreviatedIRI="hl7:CodeSystemVersion"/>
+  </DataPropertyDomain>
+  <SubDataPropertyOf>
+    <DataProperty abbreviatedIRI="hl7:CodeSystemVersion.versionDate"/>
+    <DataProperty abbreviatedIRI="hl7:VocabularyArtifact.dataProperty"/>        
+  </SubDataPropertyOf>
+  <DataPropertyRange>
+    <DataProperty abbreviatedIRI="hl7:CodeSystemVersion.versionDate"/>
+    <Datatype abbreviatedIRI="xs:string"/>
+  </DataPropertyRange>
+  <!-- CodeSystemVersion.codeSystemRef -->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:CodeSystemVersion.codeSystemRef"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:CodeSystemVersion.codeSystemRef</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Pointer up to the owning code system</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:CodeSystemVersion.codeSystemRef"/>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyArtifact.objectProperty"/>
+  </SubObjectPropertyOf>
+  <InverseObjectProperties>
+    <ObjectProperty abbreviatedIRI="hl7:CodeSystemVersion.codeSystemRef"/>
+    <ObjectProperty abbreviatedIRI="hl7:CodeSystem.versionRef"/>
+  </InverseObjectProperties>
+  <!-- CodeSystemVersion.codingRef-->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:CodeSystemVersion.codingRef"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:CodeSystemVersion.codingRef</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">The codes contained by this particular code system version</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:CodeSystemVersion.codingRef"/>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyArtifact.objectProperty"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty abbreviatedIRI="hl7:CodeSystemVersion.codingRef"/>
+    <Class abbreviatedIRI="hl7:CodeSystemVersion"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty abbreviatedIRI="hl7:CodeSystemVersion.codingRef"/>
+    <Class abbreviatedIRI="hl7:Coding"/>
+  </ObjectPropertyRange>
+  <InverseFunctionalObjectProperty>
+    <ObjectProperty abbreviatedIRI="hl7:CodeSystemVersion.codingRef"/>
+  </InverseFunctionalObjectProperty>
+  <!--
+    - Coding
+    -->
+  <Declaration>
+    <Class abbreviatedIRI="hl7:Coding"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:Coding</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">A specific code in a particular version of a code system</Literal>
+  </AnnotationAssertion>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:Coding"/>
+    <Class abbreviatedIRI="hl7:VocabularyArtifact"/>
+  </SubClassOf>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:Coding"/>
+    <ObjectExactCardinality cardinality="1">
+      <ObjectProperty abbreviatedIRI="hl7:Coding.codeSystemRef"/>
+    </ObjectExactCardinality>
+  </SubClassOf>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:Coding"/>
+    <DataMaxCardinality cardinality="1">
+      <DataProperty abbreviatedIRI="hl7:Coding.codeSystem"/>
+    </DataMaxCardinality>
+  </SubClassOf>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:Coding"/>
+    <DataMaxCardinality cardinality="1">
+      <DataProperty abbreviatedIRI="hl7:Coding.codeSystemVersion"/>
+    </DataMaxCardinality>
+  </SubClassOf>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:Coding"/>
+    <DataMaxCardinality cardinality="1">
+      <DataProperty abbreviatedIRI="hl7:Coding.code"/>
+    </DataMaxCardinality>
+  </SubClassOf>
+  <HasKey>
+    <Class abbreviatedIRI="hl7:Coding"/>
+    <DataProperty abbreviatedIRI="hl7:Coding.codeSystem"/>
+    <DataProperty abbreviatedIRI="hl7:Coding.codeSystemVersion"/>
+    <DataProperty abbreviatedIRI="hl7:Coding.code"/>
+  </HasKey>
+  <!-- Coding.codeSystemVersionRef -->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:Coding.codeSystemVersionRef"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:Coding.codeSystemVersionRef</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">The code system version this coding is part of</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:Coding.codeSystemVersionRef"/>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyArtifact.objectProperty"/>
+  </SubObjectPropertyOf>
+  <InverseObjectProperties>
+    <ObjectProperty abbreviatedIRI="hl7:CodeSystemVersion.codingRef"/>
+    <ObjectProperty abbreviatedIRI="hl7:Coding.codeSystemVersionRef"/>
+  </InverseObjectProperties>
+  <!-- Coding.codeSystemRef -->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:Coding.codeSystemRef"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:Coding.codeSystemRef</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">The code system the coding is expressed in</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:Coding.codeSystemRef"/>
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyArtifact.objectProperty"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty abbreviatedIRI="hl7:Coding.codeSystemRef"/>
+    <Class abbreviatedIRI="hl7:Coding"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty abbreviatedIRI="hl7:Coding.codeSystemRef"/>
+    <Class abbreviatedIRI="hl7:CodeSystem"/>
+  </ObjectPropertyRange>
+  <!-- Coding.codeSystem -->
+  <Declaration>
+    <DataProperty abbreviatedIRI="hl7:Coding.codeSystem"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:Coding.codeSystem</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">The OID for the code system the coding is expressed in</Literal>
+  </AnnotationAssertion>
+  <SubDataPropertyOf>
+    <DataProperty abbreviatedIRI="hl7:Coding.codeSystem"/>
+    <DataProperty abbreviatedIRI="hl7:VocabularyArtifact.dataProperty"/>        
+  </SubDataPropertyOf>
+  <DataPropertyDomain>
+    <DataProperty abbreviatedIRI="hl7:Coding.codeSystem"/>
+    <Class abbreviatedIRI="hl7:Coding"/>
+  </DataPropertyDomain>
+  <DataPropertyRange>
+    <DataProperty abbreviatedIRI="hl7:Coding.codeSystem"/>
+    <Datatype abbreviatedIRI="xs:string"/>
+<!--    <Datatype abbreviatedIRI="dt:UID"/>-->
+  </DataPropertyRange>
+  <!-- Coding.codeSystemVersion -->
+  <Declaration>
+    <DataProperty abbreviatedIRI="hl7:Coding.codeSystemVersion"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:Coding.codeSystemVersion</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">The date of the version of the the code system the coding is expressed in</Literal>
+  </AnnotationAssertion>
+  <SubDataPropertyOf>
+    <DataProperty abbreviatedIRI="hl7:Coding.codeSystemVersion"/>
+    <DataProperty abbreviatedIRI="hl7:VocabularyArtifact.dataProperty"/>        
+  </SubDataPropertyOf>
+  <DataPropertyDomain>
+    <DataProperty abbreviatedIRI="hl7:Coding.codeSystemVersion"/>
+    <Class abbreviatedIRI="hl7:Coding"/>
+  </DataPropertyDomain>
+  <DataPropertyRange>
+    <DataProperty abbreviatedIRI="hl7:Coding.codeSystemVersion"/>
+    <Datatype abbreviatedIRI="xs:string"/>
+  </DataPropertyRange>
+  <!-- Coding.code -->
+  <Declaration>
+    <DataProperty abbreviatedIRI="hl7:Coding.code"/>        
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:Coding.code</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">The date on which this version of the code system was created</Literal>
+  </AnnotationAssertion>
+  <SubDataPropertyOf>
+    <DataProperty abbreviatedIRI="hl7:Coding.code"/>        
+    <DataProperty abbreviatedIRI="hl7:VocabularyArtifact.dataProperty"/>        
+  </SubDataPropertyOf>
+  <DataPropertyDomain>
+    <DataProperty abbreviatedIRI="hl7:Coding.code"/>
+    <Class abbreviatedIRI="hl7:Coding"/>
+  </DataPropertyDomain>
+  <DataPropertyRange>
+    <DataProperty abbreviatedIRI="hl7:Coding.code"/>
+    <Datatype abbreviatedIRI="xs:string"/>
+  </DataPropertyRange>
+  <FunctionalDataProperty>
+    <DataProperty abbreviatedIRI="hl7:Coding.code"/>
+  </FunctionalDataProperty>
+  <!-- Coding.realm -->
+  <Declaration>
+    <DataProperty abbreviatedIRI="hl7:Coding.realm"/>        
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:Coding.realm</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">The context in which the code was captured (determines what bindings apply)</Literal>
+  </AnnotationAssertion>
+  <SubDataPropertyOf>
+    <DataProperty abbreviatedIRI="hl7:Coding.realm"/>        
+    <DataProperty abbreviatedIRI="hl7:VocabularyArtifact.dataProperty"/>        
+  </SubDataPropertyOf>
+  <DataPropertyDomain>
+    <DataProperty abbreviatedIRI="hl7:Coding.realm"/>
+    <Class abbreviatedIRI="hl7:Coding"/>
+  </DataPropertyDomain>
+  <DataPropertyRange>
+    <DataProperty abbreviatedIRI="hl7:Coding.realm"/>
+    <Datatype abbreviatedIRI="xs:string"/>
+  </DataPropertyRange>
+  <!-- Coding.conceptRef -->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:Coding.conceptRef"/>        
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:Coding.conceptRef</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Identifies the concept referencing this coding</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:Coding.conceptRef"/>        
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyArtifact.objectProperty"/>
+  </SubObjectPropertyOf>
+  <InverseObjectProperties>
+    <ObjectProperty abbreviatedIRI="hl7:Coding.conceptRef"/>        
+    <ObjectProperty abbreviatedIRI="hl7:VocabularyConcept.codingRef"/>        
+  </InverseObjectProperties>
+  <!--
+    - Value Set
+    -->
+  <Declaration>
+    <Class abbreviatedIRI="hl7:ValueSet"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:ValueSet</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Collection of codes from one or more code systems allowed to be used in some context</Literal>
+  </AnnotationAssertion>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:ValueSet"/>
+    <Class abbreviatedIRI="hl7:VocabularyArtifact"/>
+  </SubClassOf>
+  <!--
+    - StaticModel
+    -->
+  <Declaration>
+    <Class abbreviatedIRI="hl7:StaticModelClass"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:StaticModelClass</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">A class from an HL7 static model</Literal>
+  </AnnotationAssertion>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:StaticModelClass"/>
+    <Class abbreviatedIRI="hl7:Thing"/>
+  </SubClassOf>
+  <!-- StaticModel.classProperty -->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:StaticModel.classProperty"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:StaticModel.classProperty</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Grouper for attribute and association for situations where either may apply.</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:StaticModel.classProperty"/>
+    <ObjectProperty abbreviatedIRI="hl7:objectProperty"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty abbreviatedIRI="hl7:StaticModel.classProperty"/>
+    <Class abbreviatedIRI="hl7:StaticModelClass"/>
+  </ObjectPropertyDomain>
+  <DisjointObjectProperties>
+    <ObjectProperty abbreviatedIRI="hl7:StaticModel.attribute"/>
+    <ObjectProperty abbreviatedIRI="hl7:StaticModel.association"/>
+  </DisjointObjectProperties>
+  <!-- StaticModel.attribute -->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:StaticModel.attribute"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:StaticModel.attribute</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Attributes of classes in HL7 static models</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:StaticModel.attribute"/>
+    <ObjectProperty abbreviatedIRI="hl7:StaticModel.classProperty"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyRange>
+    <ObjectProperty abbreviatedIRI="hl7:StaticModel.attribute"/>
+    <Class abbreviatedIRI="hl7:Datatype"/>
+  </ObjectPropertyRange>
+  <ObjectPropertyRange>
+    <ObjectProperty abbreviatedIRI="hl7:StaticModel.attribute"/>
+    <DataHasValue>
+      <DataProperty abbreviatedIRI="hl7:Datatype.isProtected"/>
+      <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataHasValue>
+  </ObjectPropertyRange>
+  <!-- StaticModel.association -->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:StaticModel.association"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:StaticModel.association</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Represents one traversal-direction of an association between two HL7 static model classes</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:StaticModel.association"/>
+    <ObjectProperty abbreviatedIRI="hl7:StaticModel.classProperty"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyRange>
+    <ObjectProperty abbreviatedIRI="hl7:StaticModel.association"/>
+    <Class abbreviatedIRI="hl7:StaticModelClass"/>
+  </ObjectPropertyRange>
+  <!--
+    - Datatype
+    -->
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:Datatype"/>
+    <Class abbreviatedIRI="hl7:Thing"/>
+  </SubClassOf>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:Datatype</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">A datatype from HL7's abstract datatypes, aligned with ITS expression</Literal>
+  </AnnotationAssertion>
+  <SubClassOf>
+    <Class abbreviatedIRI="hl7:Datatype"/>
+    <DataMaxCardinality cardinality="1">
+      <DataProperty abbreviatedIRI="hl7:Datatype.isProtected"/>
+    </DataMaxCardinality>
+  </SubClassOf>
+  <!-- Datatype.objectProperty -->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:Datatype.objectProperty"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:Datatype.objectProperty</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Represents a piece of data conveyed by an HL7 datatype expressed as an object</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:Datatype.objectProperty"/>
+    <ObjectProperty abbreviatedIRI="hl7:objectProperty"/>
+  </SubObjectPropertyOf>
+  <ObjectPropertyDomain>
+    <ObjectProperty abbreviatedIRI="hl7:Datatype.objectProperty"/>
+    <Class abbreviatedIRI="hl7:Datatype"/>
+  </ObjectPropertyDomain>
+  <ObjectPropertyRange>
+    <ObjectProperty abbreviatedIRI="hl7:Datatype.objectProperty"/>
+    <Class abbreviatedIRI="hl7:Datatype"/>
+  </ObjectPropertyRange>
+  <!-- Datatype.variableTypeProperty -->
+  <Declaration>
+    <ObjectProperty abbreviatedIRI="hl7:Datatype.variableTypeProperty"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:Datatype.variableTypeProperty</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Represents a datatype property whose range is variable - dependent on the binding of the type</Literal>
+  </AnnotationAssertion>
+  <SubObjectPropertyOf>
+    <ObjectProperty abbreviatedIRI="hl7:Datatype.variableTypeProperty"/>
+    <ObjectProperty abbreviatedIRI="hl7:Datatype.objectProperty"/>
+  </SubObjectPropertyOf>
+  <!-- Datatype.dataProperty -->
+  <Declaration>
+    <DataProperty abbreviatedIRI="hl7:Datatype.dataProperty"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:Datatype.dataProperty</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Represents a piece of data conveyed by an HL7 datatype expressed as a simple data element</Literal>
+  </AnnotationAssertion>
+  <SubDataPropertyOf>
+    <DataProperty abbreviatedIRI="hl7:Datatype.dataProperty"/>
+    <DataProperty abbreviatedIRI="hl7:dataProperty"/>
+  </SubDataPropertyOf>
+  <DataPropertyDomain>
+    <DataProperty abbreviatedIRI="hl7:Datatype.dataProperty"/>
+    <Class abbreviatedIRI="hl7:Datatype"/>
+  </DataPropertyDomain>
+  <DataPropertyRange>
+    <DataProperty abbreviatedIRI="hl7:Datatype.dataProperty"/>
+    <Datatype abbreviatedIRI="xs:anyType"/>
+  </DataPropertyRange>
+  <!-- Datatype.metadataProperty -->
+  <Declaration>
+    <DataProperty abbreviatedIRI="hl7:Datatype.metadataProperty"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:Datatype.metadataProperty</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Represents a piece of metadata about an HL7 datatype</Literal>
+  </AnnotationAssertion>
+  <SubDataPropertyOf>
+    <DataProperty abbreviatedIRI="hl7:Datatype.metadataProperty"/>
+    <DataProperty abbreviatedIRI="hl7:Datatype.dataProperty"/>
+  </SubDataPropertyOf>
+  <!-- Datatype.isProtected -->
+  <Declaration>
+    <DataProperty abbreviatedIRI="hl7:Datatype.isProtected"/>
+  </Declaration>
+  <AnnotationAssertion>
+    <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    <AbbreviatedIRI>hl7:Datatype.isProtected</AbbreviatedIRI>
+    <Literal datatypeIRI="xs:string" xml:lang="en-US">Indicates whether the specified datatype is considered to be "protected".  Protected types are only permitted to be referenced by other datatypes, not by attributes</Literal>
+  </AnnotationAssertion>
+  <SubDataPropertyOf>
+    <DataProperty abbreviatedIRI="hl7:Datatype.isProtected"/>
+    <DataProperty abbreviatedIRI="hl7:Datatype.metadataProperty"/>
+  </SubDataPropertyOf>
+  <DataPropertyRange>
+    <DataProperty abbreviatedIRI="hl7:Datatype.isProtected"/>
+    <Datatype abbreviatedIRI="xs:boolean"/>
+  </DataPropertyRange>
+</Ontology>

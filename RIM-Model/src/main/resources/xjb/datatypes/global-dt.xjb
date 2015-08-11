@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb"
+          xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+          xmlns:ci="http://jaxb.dev.java.net/plugin/code-injector"
+          xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+          xmlns:inheritance="http://jaxb2-commons.dev.java.net/basic/inheritance"
+          xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
+          version="2.1">
+
+	<globalBindings choiceContentProperty="true" localScoping="toplevel" underscoreBinding="asCharInWord"
+	                fixedAttributeAsConstantProperty="true">
+		<xjc:simple />
+		<serializable uid="100000" />
+	</globalBindings>
+
+	<jaxb:bindings schemaLocation="datatypes-r2b.xsd">
+		<jaxb:schemaBindings>
+			<jaxb:package name="org.hl7.v3.dt"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+
+
+	<jaxb:bindings schemaLocation="datatypes-r2b-base.xsd" node="//xs:complexType[ @name='II' ]" >
+		<ci:code>
+			public String toString() {
+			   return ( this.getRoot() == null ? "http://www.hl7.org/v3#" : this.getRoot() ) + this.getExtension();
+			}
+		</ci:code>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="datatypes-r2b-base.xsd" node="//xs:complexType[ @name='CD' ]" >
+		<inheritance:implements>cts2.mayo.edu.terms_metamodel.terms.ConceptDescriptor</inheritance:implements>
+		<ci:code>
+			@javax.xml.bind.annotation.XmlTransient
+			private java.net.URI ___innerURI;
+
+			public java.net.URI getUri() {
+			   if ( ___innerURI == null ) { ___innerURI = org.hl7.v3.TermsHelper.descriptorToURI( this ); }
+			   return ___innerURI;
+			}
+			public void setUri( java.net.URI uri ) { }
+		</ci:code>
+
+	</jaxb:bindings>
+
+</bindings>

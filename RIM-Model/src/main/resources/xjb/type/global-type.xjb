@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns="http://java.sun.com/xml/ns/jaxb" xmlns:annox="http://annox.dev.java.net"
+               xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance"
+               xmlns:inheritance="http://jaxb2-commons.dev.java.net/basic/inheritance"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:ci="http://jaxb.dev.java.net/plugin/code-injector"
+               xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+               jaxb:extensionBindingPrefixes="annox equals hashCode ci"
+               version="2.1">
+  <jaxb:globalBindings choiceContentProperty="true" localScoping="toplevel" underscoreBinding="asCharInWord"
+                       fixedAttributeAsConstantProperty="true" >
+    <xjc:simple/>
+    <jaxb:serializable uid="100000"/>
+  </jaxb:globalBindings>
+
+  <jaxb:bindings schemaLocation="rim.xsd">
+
+    <jaxb:schemaBindings>
+      <jaxb:package name="org.hl7.v3.impl"/>
+    </jaxb:schemaBindings>
+
+    <jaxb:bindings node="//xs:complexType[ @name='InfrastructureRoot' ]" >
+      <annox:annotate>
+        <annox:annotate annox:class="com.fasterxml.jackson.annotation.JsonIdentityInfo" generator="JSONUseExistingOrGenerateIdGenerator" property="@oid"/>
+      </annox:annotate>
+      <ci:code>
+        {
+        __$$dynamic_properties_map$$ = org.hl7.v3.impl.InterceptorFactory.newPropertyInterceptor( this );
+        }
+
+        protected Class getSerializationHelperClass() {
+        return org.hl7.v3.impl.SerializationHelper.class;
+        }
+
+        protected void injectType( String type ) {
+        if ( this instanceof org.hl7.v3.impl.Act ) {
+        org.hl7.v3.impl.InfrastructureHelper.addComputedProperty( (org.hl7.v3.impl.Act) this,
+        _getTraitMap().isEmpty() ? edu.mayo.ease.EaseNames.NEW : edu.mayo.ease.EaseNames.TYPE,
+        new org.hl7.v3.dt.CD().withCode( type ).withCodeSystemName( edu.mayo.ease.EaseNames.EASE ) );
+        }
+        }
+      </ci:code>
+
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xs:complexType[ @name='InfrastructureRoot' ]//xs:attribute[ @name='oid' ]" >
+      <!--annox:annotate>
+        <annox:annotate annox:class="org.hibernate.annotations.GenericGenerator" name="UseExistingOrGenerateIdGenerator" strategy="org.hl7.v3.UseExistingOrGenerateIdGenerator" />
+      </annox:annotate-->
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xs:complexType[ @name='InfrastructureRoot' ]//xs:attribute[ @name='oref' ]" >
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xs:complexType[ @name='Act' ]" >
+      <ci:code>
+        public java.util.Set&lt;org.hl7.v3.impl.ActRelationship&gt; getOutboundRelationship(org.hl7.v3.dt.ActRelationshipType code) {
+        return ((org.hl7.v3.impl.IndexedActRelationshipList) outboundRelationships).getWithCode(code);
+        }
+
+        public java.util.Set&lt;org.hl7.v3.impl.ActRelationship&gt; getInboundRelationship(org.hl7.v3.dt.ActRelationshipType code) {
+        return ((org.hl7.v3.impl.IndexedActRelationshipList) inboundRelationships).getWithCode(code);
+        }
+      </ci:code>
+    </jaxb:bindings>
+
+  </jaxb:bindings>
+
+</jaxb:bindings>

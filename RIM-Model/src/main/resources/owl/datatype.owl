@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="urn:hl7-org:cdsdt:r2"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="urn:hl7-org:cdsdt:r2"
+     versionIRI="urn:hl7-org:cdsdt:r2/1.0">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="dt" IRI="urn:hl7-org:cdsdt:r2#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#AD"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ADXP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ANY"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActClass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActMood"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActRelationshipType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BL"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CD"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CO"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContextControl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ED"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EN"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ENXP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EntityClass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EntityDeterminer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#II"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#INT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IVL_INT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IVL_MO"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IVL_PQ"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IVL_REAL"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IVL_TS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MO"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PIVL_TS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PQ"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParticipationType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#QTY"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#REAL"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RTO"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RTO_MO_PQ"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RTO_PQ_PQ"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RoleClass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SC"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ST"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SXCM_TS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TEL"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TS"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#AddressPartType"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#Code"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#Compression"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#Decimal"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#EntityNamePartQualifier"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#EntityNamePartType"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#EntityNameUse"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#IntegrityCheckAlgorithm"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#PostalAddressUse"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#TelecommunicationAddressUse"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#TelecommunicationCapability"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#TimeStamp"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#Uid"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#Uri"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#set_EntityNamePartQualifier"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#set_EntityNameUse"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#set_PostalAddressUse"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#set_TelecommunicationAddressUse"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#set_TelecommunicationCapability"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#ActClass"/>
+        <Class IRI="#CS"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ActMood"/>
+        <Class IRI="#CS"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ActRelationshipType"/>
+        <Class IRI="#CS"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CO"/>
+        <Class IRI="#QTY"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContextControl"/>
+        <Class IRI="#CS"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntityClass"/>
+        <Class IRI="#CS"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntityDeterminer"/>
+        <Class IRI="#CS"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#INT"/>
+        <Class IRI="#QTY"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PIVL_TS"/>
+        <Class IRI="#QTY"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PQ"/>
+        <Class IRI="#QTY"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParticipationType"/>
+        <Class IRI="#CS"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#REAL"/>
+        <Class IRI="#QTY"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RTO"/>
+        <Class IRI="#QTY"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RoleClass"/>
+        <Class IRI="#CS"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TS"/>
+        <Class IRI="#QTY"/>
+    </SubClassOf>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,39 @@
+Mappings
+    roclis-lnc
+    mccernerresult-lnc
+    mcsoftlabresult-lnc
+
+Here's the current list of named prefixes recognized by the CTS2 service:
+
+Entity Types
+    Standard Vocabularies
+        sctid
+        lncpart
+        lncclass
+        lnc
+        cui
+        icd9
+        icd10cm
+        icd10pcs
+    Mayo Code Systems
+        mcbt
+        roclis
+        mccernerresult
+        mcsoftlabresult
+    RIM Models
+        Class And Type Codes
+            actClass
+            entityClass
+            roleClass
+            actType
+            roleType
+            entityType
+        RIM Entities
+            rimconceptdomain
+            rimcodesystem
+            rimcodesystemoid
+            rimcodesystemcode
+            rimvalueset
+            rimvaluesetoid
+            rimclass
+            rimclassattribute

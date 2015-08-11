@@ -1,0 +1,15 @@
+This is a snapshot of Lloyd's HL7 MIF which has
+  rim-0237: Acts, Observations, ActRelationships
+  vocab: values for codes which show up in RIM
+  datatypes: INT, REAL, CD
+
+You can load rim-0237 into Protégé and catalog-v001.xml maps ontology names to files:
+
+    http://hl7.org/owl/rim.owl				rim-0237.ttl
+    http://hl7.org/owl/vocab/uv/1129-20111220.owl	vocab-uv-1129-20111220.ttl
+    http://hl7.org/owl/vocab/uv.owl			vocab-uv-1129-20111220.ttl
+    http://hl7.org/owl/metadata.owl			metadata.ttl
+    http://hl7.org/owl/datatypes/uv/2.0.owl		datatypes-uv-2.0.ttl
+
+I haven't dug into the redundant names for the vocab ontologies.
+

@@ -1,0 +1,32 @@
+We have 5 major entities
+
+Classes
+	Classes are "classes" in an OWL sense, sets of coherent instances that usually describe a patient-related context.
+		* ContainedClass-Concepts		Enumerates the class names, marking them as concrete or abstract
+		* ContainedClass-Mappings		Associates a class to its type vocabulary (entity, role, act) and the master classCode
+		* ContainedClass-Properties	Descriptions
+		* ContainedClass-Relationship	SubClass relationships
+
+Attributes
+	Attributes are the slot properties of classes
+		* ContainedClassAttributes-Concepts	Mapping between attributes and classes
+		* ContainedClassAttributes-Properties	Description, type (including generics)
+		* ContainedClassAttributes-Relationships	Mapping between attributes and classes ("attributeOf" only rel. so far)
+
+Valuesets
+	Valuesets are collections of concepts
+		* ValueSets-Properties		Description, immutability
+		* ValueSets-Concepts		Associates the name to the id
+
+Concepts
+	Concepts in the sense of SKOS, may represent subclasses, relationships and other entities
+		* CodeSystemCodes-Concepts	Code / CodeSystem pair, name, concept type
+		CodeSystemCodes-Properties	Description, printname, internalId, act/entity/part/role links (!!)
+		CodeSystemCodes-Relationships	Concept/Concept relationshisp (e.g. specializes)
+		* CodeSystemCodes-Mappings	Type/Class Code relationships
+		
+Domains
+	Classes of Concepts?
+		ConceptDomains-Concepts		List of domains
+		ConceptDomains-Properties	Description, ConceptualSpaceForClassCode
+		ConceptDomains-Relationships	specializesDomain

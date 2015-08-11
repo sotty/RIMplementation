@@ -1,0 +1,2064 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://org.hl7.v3/rim/upper"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://org.hl7.v3/rim/upper">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="dt" IRI="urn:hl7-org:cdsdt:r2#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rim" IRI="http://org.hl7.v3/rim#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="upper" IRI="http://org.hl7.v3/rim/upper#"/>
+    <Import>urn:hl7-org:cdsdt:r2/1.0</Import>
+    <Declaration>
+        <Class abbreviatedIRI="rim:Act"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:ActRelationship"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:Definition"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:Entity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:Event"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:EventCriterion"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:Goal"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:Intent"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:LinkedAct"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:LinkedActRelationship"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:LinkedEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:LinkedParticipation"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:LinkedRole"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:LinkedRoleLink"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:Option"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:Participation"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:Promise"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:Proposal"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:Request"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:ResourceSlot"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:Role"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rim:RoleLink"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AbortedAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AbstractAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AbstractActRelationship"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AbstractEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AbstractParticipation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AbstractRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AbstractRoleLink"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActiveAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActiveEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActiveRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CancelledAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CompletedAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HeldAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InfrastructureRoot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LinkedParticipant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mooded"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MoodedAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Negatable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NewAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NormalAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NormalEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NormalRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NullifiedAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NullifiedEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NullifiedRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObsoleteAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Order"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Participant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Res"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StateAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StateEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StateRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SuspendedAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SuspendedRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temporal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TerminatedEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TerminatedRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WorkflowItem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WorkflowLink"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#act"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#actRelationship"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#activityTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#addr"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#availabilityTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#awarenessCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#certificateText"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#checkpointCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#classCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#code"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#confidentialityCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#conjunctionCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contextControlCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#derivationExpr"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#desc"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#determinerCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#effectiveTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#existenceTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#functionCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#handlingCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#id"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#inboundRelationship"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#independentInd"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#interruptibleInd"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#joinCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#languageCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#localVariableName"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#modeCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#moodCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#name"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#noteText"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#outboundRelationship"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#participant"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#participates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#participating"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#participation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#pauseQuantity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#performInd"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#playedRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#player"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#positionNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#priorityCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#priorityNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#quantity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#reasonCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#relatedAct"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#relatedEntity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#repeatNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#riskCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#role"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#scopedRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#scoper"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#seperatableInd"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#sequenceNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#signatureCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#signatureText"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#source"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#splitCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#statusCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#substitutionConditionCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#target"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#telecom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#text"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#time"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#title"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#typeCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#uncertaintyCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#actAttributeContextBlockedInd"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#contextConductionInd"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#inversionInd"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#negationInd"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Order"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="rim:Intent"/>
+            <Class abbreviatedIRI="rim:Promise"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:Act"/>
+        <Class IRI="#AbstractAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:ActRelationship"/>
+        <Class IRI="#AbstractActRelationship"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:Definition"/>
+        <Class IRI="#MoodedAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:Entity"/>
+        <Class IRI="#AbstractEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:Event"/>
+        <Class IRI="#MoodedAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:EventCriterion"/>
+        <Class IRI="#MoodedAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:Goal"/>
+        <Class IRI="#MoodedAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:Intent"/>
+        <Class IRI="#MoodedAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:LinkedAct"/>
+        <Class abbreviatedIRI="rim:Act"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:LinkedAct"/>
+        <Class IRI="#LinkedParticipant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:LinkedActRelationship"/>
+        <Class abbreviatedIRI="rim:ActRelationship"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:LinkedActRelationship"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#source"/>
+            <Class abbreviatedIRI="rim:Act"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:LinkedActRelationship"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#target"/>
+            <Class abbreviatedIRI="rim:Act"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:LinkedEntity"/>
+        <Class abbreviatedIRI="rim:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:LinkedParticipation"/>
+        <Class abbreviatedIRI="rim:Participation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:LinkedParticipation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#act"/>
+            <Class abbreviatedIRI="rim:Act"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:LinkedParticipation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#role"/>
+            <Class abbreviatedIRI="rim:Role"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:LinkedRole"/>
+        <Class abbreviatedIRI="rim:Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:LinkedRole"/>
+        <Class IRI="#LinkedParticipant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:LinkedRole"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#player"/>
+            <Class abbreviatedIRI="rim:Entity"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:LinkedRole"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#scoper"/>
+            <Class abbreviatedIRI="rim:Entity"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:LinkedRoleLink"/>
+        <Class abbreviatedIRI="rim:RoleLink"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:Option"/>
+        <Class IRI="#MoodedAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:Participation"/>
+        <Class IRI="#AbstractParticipation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:Promise"/>
+        <Class IRI="#MoodedAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:Proposal"/>
+        <Class IRI="#MoodedAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:Request"/>
+        <Class IRI="#MoodedAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:ResourceSlot"/>
+        <Class IRI="#MoodedAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:Role"/>
+        <Class IRI="#AbstractRole"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rim:RoleLink"/>
+        <Class IRI="#AbstractRoleLink"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbortedAct"/>
+        <Class IRI="#NormalAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <Class IRI="#Mooded"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <Class IRI="#Negatable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <Class IRI="#Participant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <Class IRI="#Temporal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <Class IRI="#WorkflowItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#activityTime"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#availabilityTime"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#classCode"/>
+            <Class abbreviatedIRI="dt:ActClass"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#confidentialityCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#derivationExpr"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#effectiveTime"/>
+            <Class abbreviatedIRI="dt:SXCM_TS"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#independentInd"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#languageCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#text"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#title"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractAct"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#uncertaintyCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractActRelationship"/>
+        <Class IRI="#Negatable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractActRelationship"/>
+        <Class IRI="#Rel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractActRelationship"/>
+        <Class IRI="#WorkflowLink"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractActRelationship"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#typeCode"/>
+            <Class abbreviatedIRI="dt:ActRelationshipType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractActRelationship"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#contextControlCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractActRelationship"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#localVariableName"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractActRelationship"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#pauseQuantity"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractActRelationship"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#priorityNumber"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractActRelationship"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#priorityNumber"/>
+            <Class abbreviatedIRI="dt:REAL"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractActRelationship"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#seperatableInd"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractActRelationship"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#sequenceNumber"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractActRelationship"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#actAttributeContextBlockedInd"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractActRelationship"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#contextConductionInd"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractActRelationship"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#inversionInd"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractEntity"/>
+        <Class IRI="#Res"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractEntity"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#classCode"/>
+            <Class abbreviatedIRI="dt:EntityClass"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractEntity"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#desc"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractEntity"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#determinerCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractEntity"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#existenceTime"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractParticipation"/>
+        <Class IRI="#Negatable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractParticipation"/>
+        <Class IRI="#Rel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractParticipation"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#typeCode"/>
+            <Class abbreviatedIRI="dt:ParticipationType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractParticipation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#awarenessCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractParticipation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#contextControlCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractParticipation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#functionCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractParticipation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#modeCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractParticipation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#noteText"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractParticipation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#performInd"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractParticipation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#priorityNumber"/>
+            <Class abbreviatedIRI="dt:INT"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractParticipation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#sequenceNumber"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractParticipation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#signatureCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractParticipation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#signatureText"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractParticipation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#substitutionConditionCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractParticipation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#time"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractRole"/>
+        <Class IRI="#Negatable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractRole"/>
+        <Class IRI="#Participant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractRole"/>
+        <Class IRI="#Temporal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractRole"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#classCode"/>
+            <Class abbreviatedIRI="dt:RoleClass"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractRole"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#effectiveTime"/>
+            <Class abbreviatedIRI="dt:SXCM_TS"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractRoleLink"/>
+        <Class IRI="#Rel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractRoleLink"/>
+        <Class IRI="#Temporal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractRoleLink"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#effectiveTime"/>
+            <Class abbreviatedIRI="dt:IVL_TS"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbstractRoleLink"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#priorityNumber"/>
+            <Class abbreviatedIRI="dt:INT"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ActiveAct"/>
+        <Class IRI="#NormalAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ActiveEntity"/>
+        <Class IRI="#NormalEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ActiveRole"/>
+        <Class IRI="#NormalRole"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CancelledAct"/>
+        <Class IRI="#NormalAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompletedAct"/>
+        <Class IRI="#NormalAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HeldAct"/>
+        <Class IRI="#NormalAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LinkedParticipant"/>
+        <Class IRI="#Participant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mooded"/>
+        <Class IRI="#InfrastructureRoot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mooded"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#moodCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MoodedAct"/>
+        <Class IRI="#AbstractAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Negatable"/>
+        <Class IRI="#InfrastructureRoot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Negatable"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#negationInd"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NewAct"/>
+        <Class IRI="#NormalAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NormalAct"/>
+        <Class IRI="#StateAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NormalEntity"/>
+        <Class IRI="#StateEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NormalRole"/>
+        <Class IRI="#StateRole"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NullifiedAct"/>
+        <Class IRI="#StateAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NullifiedEntity"/>
+        <Class IRI="#StateEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NullifiedRole"/>
+        <Class IRI="#AbstractRole"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObsoleteAct"/>
+        <Class IRI="#StateAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Order"/>
+        <Class IRI="#MoodedAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Participant"/>
+        <Class IRI="#Res"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rel"/>
+        <Class IRI="#InfrastructureRoot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rel"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#priorityNumber"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rel"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#typeCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Res"/>
+        <Class IRI="#InfrastructureRoot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Res"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#id"/>
+            <Class abbreviatedIRI="dt:II"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Res"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#classCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Res"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#code"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Res"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#statusCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StateAct"/>
+        <Class IRI="#AbstractAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StateEntity"/>
+        <Class IRI="#AbstractEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StateRole"/>
+        <Class IRI="#AbstractRole"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SuspendedAct"/>
+        <Class IRI="#NormalAct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SuspendedRole"/>
+        <Class IRI="#NormalRole"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temporal"/>
+        <Class IRI="#InfrastructureRoot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TerminatedEntity"/>
+        <Class IRI="#NormalEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TerminatedRole"/>
+        <Class IRI="#NormalRole"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkflowItem"/>
+        <Class IRI="#InfrastructureRoot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkflowItem"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#interruptibleInd"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkflowItem"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#repeatNumber"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkflowLink"/>
+        <Class IRI="#InfrastructureRoot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkflowLink"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#checkpointCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkflowLink"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#conjunctionCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkflowLink"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#joinCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkflowLink"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#splitCode"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class abbreviatedIRI="rim:Act"/>
+        <Class abbreviatedIRI="rim:Entity"/>
+        <Class abbreviatedIRI="rim:Role"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Rel"/>
+        <Class IRI="#Res"/>
+    </DisjointClasses>
+    <DisjointUnion>
+        <Class IRI="#Rel"/>
+        <Class IRI="#AbstractActRelationship"/>
+        <Class IRI="#AbstractParticipation"/>
+        <Class IRI="#AbstractRoleLink"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="#Res"/>
+        <Class IRI="#AbstractAct"/>
+        <Class IRI="#AbstractEntity"/>
+        <Class IRI="#AbstractRole"/>
+    </DisjointUnion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#participant"/>
+        <ObjectProperty IRI="#participation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#participates"/>
+        <ObjectProperty IRI="#participation"/>
+    </SubObjectPropertyOf>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#activityTime"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#availabilityTime"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#determinerCode"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#effectiveTime"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#existenceTime"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#handlingCode"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#independentInd"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#interruptibleInd"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#languageCode"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#modeCode"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#moodCode"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#reasonCode"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#repeatNumber"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#riskCode"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#time"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#title"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#typeCode"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#act"/>
+        <Class abbreviatedIRI="rim:LinkedParticipation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#actRelationship"/>
+        <Class abbreviatedIRI="rim:LinkedAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#activityTime"/>
+        <Class IRI="#AbstractAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#addr"/>
+        <Class IRI="#AbstractRole"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#availabilityTime"/>
+        <Class IRI="#AbstractAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#awarenessCode"/>
+        <Class IRI="#AbstractParticipation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#certificateText"/>
+        <Class IRI="#AbstractRole"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#checkpointCode"/>
+        <Class IRI="#WorkflowLink"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#classCode"/>
+        <Class IRI="#Res"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#code"/>
+        <Class IRI="#Res"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#confidentialityCode"/>
+        <Class IRI="#AbstractAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#conjunctionCode"/>
+        <Class IRI="#WorkflowLink"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contextControlCode"/>
+        <ObjectUnionOf>
+            <Class IRI="#AbstractActRelationship"/>
+            <Class IRI="#AbstractParticipation"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#derivationExpr"/>
+        <Class IRI="#AbstractAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#desc"/>
+        <Class IRI="#AbstractEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#determinerCode"/>
+        <Class IRI="#AbstractEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#effectiveTime"/>
+        <Class IRI="#Temporal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#existenceTime"/>
+        <Class IRI="#AbstractEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#functionCode"/>
+        <Class IRI="#AbstractParticipation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#handlingCode"/>
+        <Class IRI="#AbstractEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#id"/>
+        <Class IRI="#Res"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#inboundRelationship"/>
+        <Class abbreviatedIRI="rim:LinkedAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#independentInd"/>
+        <Class IRI="#AbstractAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#interruptibleInd"/>
+        <Class IRI="#WorkflowItem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#joinCode"/>
+        <Class IRI="#WorkflowLink"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#languageCode"/>
+        <Class IRI="#AbstractAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#localVariableName"/>
+        <Class IRI="#AbstractActRelationship"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#modeCode"/>
+        <Class IRI="#AbstractParticipation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#moodCode"/>
+        <Class IRI="#Mooded"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#name"/>
+        <Class IRI="#AbstractEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#noteText"/>
+        <Class IRI="#AbstractParticipation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#outboundRelationship"/>
+        <Class abbreviatedIRI="rim:LinkedAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#participant"/>
+        <Class abbreviatedIRI="rim:LinkedAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#participates"/>
+        <Class abbreviatedIRI="rim:LinkedRole"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#participating"/>
+        <Class abbreviatedIRI="rim:LinkedAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#participation"/>
+        <Class IRI="#LinkedParticipant"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#pauseQuantity"/>
+        <Class IRI="#AbstractActRelationship"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#performInd"/>
+        <Class IRI="#AbstractParticipation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#playedRole"/>
+        <Class abbreviatedIRI="rim:LinkedEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#player"/>
+        <Class abbreviatedIRI="rim:LinkedRole"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#positionNumber"/>
+        <Class IRI="#AbstractRole"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#priorityCode"/>
+        <Class IRI="#WorkflowItem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#priorityNumber"/>
+        <Class IRI="#Rel"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#quantity"/>
+        <ObjectUnionOf>
+            <Class IRI="#AbstractEntity"/>
+            <Class IRI="#AbstractRole"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#reasonCode"/>
+        <Class IRI="#AbstractAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#relatedAct"/>
+        <Class abbreviatedIRI="rim:LinkedAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#relatedEntity"/>
+        <Class abbreviatedIRI="rim:LinkedEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#repeatNumber"/>
+        <Class IRI="#WorkflowItem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#riskCode"/>
+        <Class IRI="#AbstractEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#role"/>
+        <Class abbreviatedIRI="rim:LinkedParticipation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#scopedRole"/>
+        <Class abbreviatedIRI="rim:LinkedEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#scoper"/>
+        <Class abbreviatedIRI="rim:LinkedRole"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#seperatableInd"/>
+        <Class IRI="#AbstractActRelationship"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#sequenceNumber"/>
+        <Class IRI="#Rel"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#signatureCode"/>
+        <Class IRI="#AbstractParticipation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#signatureText"/>
+        <Class IRI="#AbstractParticipation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#source"/>
+        <Class abbreviatedIRI="rim:LinkedActRelationship"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#splitCode"/>
+        <Class IRI="#WorkflowLink"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#statusCode"/>
+        <Class IRI="#Res"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#substitutionConditionCode"/>
+        <Class IRI="#AbstractParticipation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#target"/>
+        <Class abbreviatedIRI="rim:LinkedActRelationship"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#telecom"/>
+        <ObjectUnionOf>
+            <Class IRI="#AbstractEntity"/>
+            <Class IRI="#AbstractRole"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#text"/>
+        <Class IRI="#AbstractAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#time"/>
+        <Class IRI="#AbstractParticipation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#title"/>
+        <Class IRI="#AbstractAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#typeCode"/>
+        <Class IRI="#Rel"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#uncertaintyCode"/>
+        <Class IRI="#AbstractAct"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#act"/>
+        <Class abbreviatedIRI="rim:Act"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#actRelationship"/>
+        <Class abbreviatedIRI="rim:LinkedAct"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#activityTime"/>
+        <Class abbreviatedIRI="dt:SXCM_TS"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#addr"/>
+        <Class abbreviatedIRI="dt:AD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#availabilityTime"/>
+        <Class abbreviatedIRI="dt:TS"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#awarenessCode"/>
+        <Class abbreviatedIRI="dt:CD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#certificateText"/>
+        <Class abbreviatedIRI="dt:ED"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#checkpointCode"/>
+        <Class abbreviatedIRI="dt:CS"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#classCode"/>
+        <Class abbreviatedIRI="dt:CS"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#code"/>
+        <Class abbreviatedIRI="dt:CD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#confidentialityCode"/>
+        <Class abbreviatedIRI="dt:CD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#conjunctionCode"/>
+        <Class abbreviatedIRI="dt:CS"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contextControlCode"/>
+        <Class abbreviatedIRI="dt:ContextControl"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#derivationExpr"/>
+        <Class abbreviatedIRI="dt:ST"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#desc"/>
+        <Class abbreviatedIRI="dt:ED"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#determinerCode"/>
+        <Class abbreviatedIRI="dt:EntityDeterminer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#existenceTime"/>
+        <Class abbreviatedIRI="dt:IVL_TS"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#functionCode"/>
+        <Class abbreviatedIRI="dt:CD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#handlingCode"/>
+        <Class abbreviatedIRI="dt:CD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#id"/>
+        <Class abbreviatedIRI="dt:II"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#inboundRelationship"/>
+        <Class abbreviatedIRI="rim:ActRelationship"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#independentInd"/>
+        <Class abbreviatedIRI="dt:BL"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#interruptibleInd"/>
+        <Class abbreviatedIRI="dt:BL"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#joinCode"/>
+        <Class abbreviatedIRI="dt:CS"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#languageCode"/>
+        <Class abbreviatedIRI="dt:CD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#localVariableName"/>
+        <Class abbreviatedIRI="dt:ST"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#modeCode"/>
+        <Class abbreviatedIRI="dt:CD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#moodCode"/>
+        <Class abbreviatedIRI="dt:ActMood"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#name"/>
+        <Class abbreviatedIRI="dt:EN"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#noteText"/>
+        <Class abbreviatedIRI="dt:ED"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#outboundRelationship"/>
+        <Class abbreviatedIRI="rim:ActRelationship"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#participant"/>
+        <Class abbreviatedIRI="rim:LinkedParticipation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#participates"/>
+        <Class abbreviatedIRI="rim:LinkedParticipation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#participating"/>
+        <Class abbreviatedIRI="rim:LinkedRole"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#participation"/>
+        <Class IRI="#AbstractParticipation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#pauseQuantity"/>
+        <Class abbreviatedIRI="dt:PQ"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#performInd"/>
+        <Class abbreviatedIRI="dt:BL"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#playedRole"/>
+        <Class abbreviatedIRI="rim:Role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#player"/>
+        <Class abbreviatedIRI="rim:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#positionNumber"/>
+        <Class abbreviatedIRI="dt:INT"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#priorityCode"/>
+        <Class abbreviatedIRI="dt:CD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#quantity"/>
+        <Class abbreviatedIRI="dt:PQ"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#reasonCode"/>
+        <Class abbreviatedIRI="dt:CD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#relatedAct"/>
+        <Class abbreviatedIRI="rim:LinkedAct"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#relatedEntity"/>
+        <Class abbreviatedIRI="rim:LinkedEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#repeatNumber"/>
+        <Class abbreviatedIRI="dt:IVL_INT"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#riskCode"/>
+        <Class abbreviatedIRI="dt:CD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#role"/>
+        <Class abbreviatedIRI="rim:Role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#scopedRole"/>
+        <Class abbreviatedIRI="rim:Role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#scoper"/>
+        <Class abbreviatedIRI="rim:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#seperatableInd"/>
+        <Class abbreviatedIRI="dt:BL"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#sequenceNumber"/>
+        <Class abbreviatedIRI="dt:INT"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#signatureCode"/>
+        <Class abbreviatedIRI="dt:CD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#signatureText"/>
+        <Class abbreviatedIRI="dt:ED"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#source"/>
+        <Class abbreviatedIRI="rim:Act"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#splitCode"/>
+        <Class abbreviatedIRI="dt:CS"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#statusCode"/>
+        <Class abbreviatedIRI="dt:CS"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#substitutionConditionCode"/>
+        <Class abbreviatedIRI="dt:CD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#target"/>
+        <Class abbreviatedIRI="rim:Act"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#telecom"/>
+        <Class abbreviatedIRI="dt:TEL"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#text"/>
+        <Class abbreviatedIRI="dt:ED"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#time"/>
+        <Class abbreviatedIRI="dt:IVL_TS"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#title"/>
+        <Class abbreviatedIRI="dt:ED"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#typeCode"/>
+        <Class abbreviatedIRI="dt:CS"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#uncertaintyCode"/>
+        <Class abbreviatedIRI="dt:CD"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#actAttributeContextBlockedInd"/>
+        <Class IRI="#AbstractActRelationship"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#contextConductionInd"/>
+        <Class IRI="#AbstractActRelationship"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#inversionInd"/>
+        <Class IRI="#AbstractActRelationship"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#negationInd"/>
+        <Class IRI="#Negatable"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#actAttributeContextBlockedInd"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#contextConductionInd"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#inversionInd"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#negationInd"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#activityTime</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#addr</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#availabilityTime</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#awarenessCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#certificateText</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#checkpointCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#classCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#code</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#confidentialityCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#conjunctionCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#contextControlCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#derivationExpr</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#desc</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#determinerCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#effectiveTime</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#existenceTime</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#functionCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#handlingCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#id</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#independentInd</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#interruptibleInd</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#joinCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#languageCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#localVariableName</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#modeCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#moodCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#name</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#noteText</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#pauseQuantity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#performInd</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#playedRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#positionNumber</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#priorityCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#priorityNumber</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#quantity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#reasonCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#repeatNumber</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#riskCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#role</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#scopedRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#scoper</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#seperatableInd</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#sequenceNumber</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#signatureCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#signatureText</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#source</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#splitCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#statusCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#substitutionConditionCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#target</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#telecom</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#text</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#time</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#title</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#typeCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://drools.org/shapes/attribute"/>
+        <IRI>#uncertaintyCode</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral"></Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+
